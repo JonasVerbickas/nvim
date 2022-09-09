@@ -10,6 +10,7 @@ return require('packer').startup(function(use)
   use 'Mofiqul/vscode.nvim'
   use 'tanvirtin/monokai.nvim'
   use 'https://gitlab.com/__tpb/monokai-pro.nvim'
+  use 'p00f/nvim-ts-rainbow'
 
   
   -- TJ created lodash of neovim
