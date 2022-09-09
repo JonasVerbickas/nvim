@@ -15,4 +15,3 @@ vim.api.nvim_set_keymap('n', '<C-9>', [[<Cmd>lua require('monokaipro.functions')
 vim.api.nvim_set_keymap('n', '<C-0>', [[<Cmd>lua require('monokaipro.functions').change_filter('classic')<CR>]], { noremap = true, silent = true })
 
 
-

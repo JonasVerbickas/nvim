@@ -4,19 +4,23 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
+  -- Colours
   use 'wbthomason/packer.nvim'
   use 'folke/tokyonight.nvim'
   use 'Mofiqul/vscode.nvim'
   use 'tanvirtin/monokai.nvim'
   use 'https://gitlab.com/__tpb/monokai-pro.nvim'
   use 'p00f/nvim-ts-rainbow'
+  -- treesitter
+  use("nvim-treesitter/nvim-treesitter", {
+        run = ":TSUpdate"
+    })
 
-  
-  -- TJ created lodash of neovim
+  -- telescope
   use("nvim-lua/plenary.nvim")
   use("nvim-telescope/telescope.nvim")
 
+  -- LSP
   use {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -25,9 +29,13 @@ return require('packer').startup(function(use)
     'saadparwaiz1/cmp_luasnip', -- Snippets source for nvim-cmp
     'L3MON4D3/LuaSnip', -- Snippets plugin
     "neovim/nvim-lspconfig",
-}
+    }
 
-  use("nvim-treesitter/nvim-treesitter", {
-        run = ":TSUpdate"
-    })
+  use {
+      'kyazdani42/nvim-tree.lua',
+      requires = {
+        'kyazdani42/nvim-web-devicons', -- optional, for file icons
+      },
+  }
+
 end)
